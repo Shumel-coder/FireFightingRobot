@@ -1,5 +1,4 @@
-void setup() {
-  /*------ Arduino Fire Fighting Robot Code----- */
+/*------ Arduino Fire Fighting Robot Code----- */
 
 
 
@@ -39,7 +38,7 @@ void setup() {
 
     pinMode(leftSensor, INPUT);
 
-    pinMode(rightSesnor, INPUT);
+    pinMode(rightSensor, INPUT);
 
     pinMode(forwardSensor, INPUT);
 
@@ -53,7 +52,7 @@ void setup() {
 
     pinMode(pump, OUTPUT);
 
-
+    Serial.begin(9600);
 
     myservo.attach(11);
 
@@ -119,7 +118,6 @@ void setup() {
     myservo.write(90);  //Sweep_Servo();
 
 
-
     if (digitalRead(leftSensor) == 1 && digitalRead(rightSensor) == 1 && digitalRead(forwardSensor) == 1)  //If Fire not detected all sensors are one
 
     {
@@ -153,6 +151,7 @@ void setup() {
       digitalWrite(rightMotor2, LOW);
 
       fire = true;
+      Serial.println("forward");
 
     }
 
@@ -164,13 +163,15 @@ void setup() {
 
       //Move the robot left
 
-      digitalWrite(leftMotor1, HIGH);
+      digitalWrite(leftMotor1, LOW);
 
-      digitalWrite(leftMotor2, LOW);
+      digitalWrite(leftMotor2, HIGH);
 
       digitalWrite(rightMotor1, HIGH);
 
       digitalWrite(rightMotor2, HIGH);
+
+      Serial.println("left");
 
     }
 
@@ -189,9 +190,11 @@ void setup() {
       digitalWrite(rightMotor1, HIGH);
 
       digitalWrite(rightMotor2, LOW);
+
+      Serial.println("right");
     }
 
-
+  
 
     delay(300);  //Slow down the speed of robot
 
