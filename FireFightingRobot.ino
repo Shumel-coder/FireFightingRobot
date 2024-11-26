@@ -115,7 +115,7 @@
 
   {
 
-    myservo.write(90);  //Sweep_Servo();
+    myservo.write(90); 
 
 
     if (digitalRead(leftSensor) == 1 && digitalRead(rightSensor) == 1 && digitalRead(forwardSensor) == 1)  //If Fire not detected all sensors are one
