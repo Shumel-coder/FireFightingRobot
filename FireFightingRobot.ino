@@ -16,8 +16,8 @@
 
   /*-------defining Inputs------*/
 
-  int leftSensor = 8;
-  int forwardSensor = 9;
+  int forwardSensor = 8;
+  int leftSensor = 9;
   int rightSensor = 10;
 
 
